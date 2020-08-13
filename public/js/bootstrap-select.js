@@ -1,10 +1,3 @@
-/*!
- * Bootstrap-select v1.12.13 (https://github.com/heimrichhannot/bootstrap-select)
- *
- * Copyright 2013-2017 bootstrap-select
- * Licensed under MIT (https://github.com/heimrichhannot/bootstrap-select/LICENSE)
- */
-
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module unless amdModuleId is set
@@ -35,8 +28,7 @@
                         var object = {};
                         var $defineProperty = Object.defineProperty;
                         var result = $defineProperty(object, object, object) && $defineProperty;
-                    } catch (error) {
-                    }
+                    } catch (error) {}
                     return result;
                 }());
                 var indexOf = ''.indexOf;
@@ -85,8 +77,7 @@
                         var object = {};
                         var $defineProperty = Object.defineProperty;
                         var result = $defineProperty(object, object, object) && $defineProperty;
-                    } catch (error) {
-                    }
+                    } catch (error) {}
                     return result;
                 }());
                 var toString = {}.toString;
@@ -136,13 +127,13 @@
             Object.keys = function(
                 o, // object
                 k, // key
-                r  // result array
+                r // result array
             ) {
                 // initialize object and result
                 r = [];
                 // iterate over object keys
                 for (k in o)
-                    // fill result array with non-prototypical keys
+                // fill result array with non-prototypical keys
                     r.hasOwnProperty.call(o, k) && r.push(k);
                 // return result
                 return r;
@@ -228,19 +219,19 @@
          */
         function normalizeToBase(text) {
             var rExps = [
-                {re: /[\xC0-\xC6]/g, ch: 'A'},
-                {re: /[\xE0-\xE6]/g, ch: 'a'},
-                {re: /[\xC8-\xCB]/g, ch: 'E'},
-                {re: /[\xE8-\xEB]/g, ch: 'e'},
-                {re: /[\xCC-\xCF]/g, ch: 'I'},
-                {re: /[\xEC-\xEF]/g, ch: 'i'},
-                {re: /[\xD2-\xD6]/g, ch: 'O'},
-                {re: /[\xF2-\xF6]/g, ch: 'o'},
-                {re: /[\xD9-\xDC]/g, ch: 'U'},
-                {re: /[\xF9-\xFC]/g, ch: 'u'},
-                {re: /[\xC7-\xE7]/g, ch: 'c'},
-                {re: /[\xD1]/g, ch: 'N'},
-                {re: /[\xF1]/g, ch: 'n'},
+                { re: /[\xC0-\xC6]/g, ch: 'A' },
+                { re: /[\xE0-\xE6]/g, ch: 'a' },
+                { re: /[\xC8-\xCB]/g, ch: 'E' },
+                { re: /[\xE8-\xEB]/g, ch: 'e' },
+                { re: /[\xCC-\xCF]/g, ch: 'I' },
+                { re: /[\xEC-\xEF]/g, ch: 'i' },
+                { re: /[\xD2-\xD6]/g, ch: 'O' },
+                { re: /[\xF2-\xF6]/g, ch: 'o' },
+                { re: /[\xD9-\xDC]/g, ch: 'U' },
+                { re: /[\xF9-\xFC]/g, ch: 'u' },
+                { re: /[\xC7-\xE7]/g, ch: 'c' },
+                { re: /[\xD1]/g, ch: 'N' },
+                { re: /[\xF1]/g, ch: 'n' },
             ];
             $.each(rExps, function() {
                 text = text ? text.replace(this.re, this.ch) : '';
@@ -478,8 +469,8 @@
                     '<div class="bs-searchbox">' +
                     '<input type="text" class="form-control" autocomplete="off"' +
                     (null === this.options.liveSearchPlaceholder ? '' : ' placeholder="' + htmlEscape(this.options.liveSearchPlaceholder) + '"') + ' role="textbox" aria-label="Search">' +
-                    '</div>'
-                    : '';
+                    '</div>' :
+                    '';
                 var actionsbox = this.multiple && this.options.actionsBox ?
                     '<div class="bs-actionsbox">' +
                     '<div class="btn-group btn-group-sm btn-block">' +
@@ -490,8 +481,8 @@
                     this.options.deselectAllText +
                     '</button>' +
                     '</div>' +
-                    '</div>'
-                    : '';
+                    '</div>' :
+                    '';
                 var donebutton = this.multiple && this.options.doneButton ?
                     '<div class="bs-donebutton">' +
                     '<div class="btn-group btn-block">' +
@@ -499,8 +490,8 @@
                     this.options.doneButtonText +
                     '</button>' +
                     '</div>' +
-                    '</div>'
-                    : '';
+                    '</div>' :
+                    '';
                 var drop =
                     '<div class="btn-group bootstrap-select' + showTick + inputGroup + '">' +
                     '<button type="button" class="' + this.options.styleBase + ' dropdown-toggle" data-toggle="dropdown"' + autofocus + ' role="button">' +
@@ -900,21 +891,21 @@
                     $menu = menuStyle ? null : $(menu),
                     menuPadding = {
                         vert: parseInt(menuStyle ? menuStyle.paddingTop : $menu.css('paddingTop')) +
-                        parseInt(menuStyle ? menuStyle.paddingBottom : $menu.css('paddingBottom')) +
-                        parseInt(menuStyle ? menuStyle.borderTopWidth : $menu.css('borderTopWidth')) +
-                        parseInt(menuStyle ? menuStyle.borderBottomWidth : $menu.css('borderBottomWidth')),
+                            parseInt(menuStyle ? menuStyle.paddingBottom : $menu.css('paddingBottom')) +
+                            parseInt(menuStyle ? menuStyle.borderTopWidth : $menu.css('borderTopWidth')) +
+                            parseInt(menuStyle ? menuStyle.borderBottomWidth : $menu.css('borderBottomWidth')),
                         horiz: parseInt(menuStyle ? menuStyle.paddingLeft : $menu.css('paddingLeft')) +
-                        parseInt(menuStyle ? menuStyle.paddingRight : $menu.css('paddingRight')) +
-                        parseInt(menuStyle ? menuStyle.borderLeftWidth : $menu.css('borderLeftWidth')) +
-                        parseInt(menuStyle ? menuStyle.borderRightWidth : $menu.css('borderRightWidth')),
+                            parseInt(menuStyle ? menuStyle.paddingRight : $menu.css('paddingRight')) +
+                            parseInt(menuStyle ? menuStyle.borderLeftWidth : $menu.css('borderLeftWidth')) +
+                            parseInt(menuStyle ? menuStyle.borderRightWidth : $menu.css('borderRightWidth')),
                     },
                     menuExtras = {
                         vert: menuPadding.vert +
-                        parseInt(menuStyle ? menuStyle.marginTop : $menu.css('marginTop')) +
-                        parseInt(menuStyle ? menuStyle.marginBottom : $menu.css('marginBottom')) + 2,
+                            parseInt(menuStyle ? menuStyle.marginTop : $menu.css('marginTop')) +
+                            parseInt(menuStyle ? menuStyle.marginBottom : $menu.css('marginBottom')) + 2,
                         horiz: menuPadding.horiz +
-                        parseInt(menuStyle ? menuStyle.marginLeft : $menu.css('marginLeft')) +
-                        parseInt(menuStyle ? menuStyle.marginRight : $menu.css('marginRight')) + 2,
+                            parseInt(menuStyle ? menuStyle.marginLeft : $menu.css('marginLeft')) +
+                            parseInt(menuStyle ? menuStyle.marginRight : $menu.css('marginRight')) + 2,
                     };
 
                 document.body.removeChild(newElement);
@@ -971,7 +962,7 @@
                             containerPos.top += parseInt($container.css('borderTopWidth'));
                             containerPos.left += parseInt($container.css('borderLeftWidth'));
                         } else {
-                            containerPos = {top: 0, left: 0};
+                            containerPos = { top: 0, left: 0 };
                         }
 
                         var winPad = that.options.windowPadding;
@@ -1128,7 +1119,7 @@
                             containerPos.top += parseInt($container.css('borderTopWidth')) - $container.scrollTop();
                             containerPos.left += parseInt($container.css('borderLeftWidth')) - $container.scrollLeft();
                         } else {
-                            containerPos = {top: 0, left: 0};
+                            containerPos = { top: 0, left: 0 };
                         }
 
                         actualHeight = $element.hasClass('dropup') ? 0 : $element[0].offsetHeight;

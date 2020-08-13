@@ -14,6 +14,10 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-storage.js"></script>
 
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -36,6 +40,10 @@
 </head>
 
 <body>
+
+
+
+
 
     <!-- Start Main Top -->
     <div class="main-top">
@@ -228,7 +236,7 @@
                                     <a href="partner.html">Become a partner</a>
                                 </li>
                                 <li>
-                                    <a href="delivery.html">Delivery</a>
+                                    <a href="delivery.html">Return  &amp; Refund Policy </a>
                                 </li>
                                 <li><a href="shop-detail.html">Vendor Details</a></li>
                             </ul>
@@ -285,24 +293,57 @@
         </div>
     </div>
     <!-- End All Title Box -->
-    <!-- Start Delivery Information-->
-
     <div>
 
-
-
-        vbfvjbfhbvjkfvbfhvbfhvbfhvbfkvbf vf vf dv dfv df vd fvfvfvfvbfhvbfhvbhfbvfv
-        <var>fv
-    <fieldset>fv
-        fv
-    </fieldset>
-</var>
-        <h1>Partnership form available Will be shown here</h1>
-
-
+        <div class="col-lg-8 col-sm-12">
+            <div class="contact-form-right">
+                <h2>PARTNERSHIP FORM</h2>
+                <p>Write us your message. Our executive will get in touch with you.</p>
+                <form id="partnerForm">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="pname" name="pname" placeholder="Your Name" required data-error="Please enter your name">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Email" id="pemail" class="form-control" name="name" required data-error="Please enter your email">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Mobile Number" id="pmob" class="form-control" name="name" required data-error="Please enter your email">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="psub" name="name" placeholder="Subject" required data-error="Please enter your Subject">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea class="form-control" id="pmessage" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="submit-button text-center">
+                                <button class="btn hvr-hover" id="submit" type="submit" becomePartner()>Send Message</button>
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <!-- End Delivery Information-->
-     <!-- Start Instagram Feed  -->
+
+
+    <!-- Start Instagram Feed  -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
@@ -421,7 +462,7 @@
                                 <li><a href="location.html">Our Location</a></li>
                                 <li><a href="tnc.html">Terms &amp; Conditions</a></li>
                                 <li><a href="privacypolicy.html">Privacy Policy</a></li>
-                                <li><a href="delivery.html">Delivery Information</a></li>
+                                <li><a href="delivery.html">Return  &amp; Refund Policy </a></li>
                             </ul>
                         </div>
                     </div>
@@ -474,8 +515,11 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/baguetteBox.min.js"></script>
     <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
