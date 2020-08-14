@@ -1,6 +1,4 @@
-/* only small desktops */
-/* tablets */
-/* only small tablets */
+
  @media only screen and (min-width: 992px) and (max-width: 1199px) {
      nav.navbar.bootsnav ul.nav > li > a{
          padding-top: 30px;
