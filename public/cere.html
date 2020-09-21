@@ -28,6 +28,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
 
+
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
+
+    <script src="js/app.js"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -300,93 +307,58 @@
 
     <div class="products-box">
         <div class="container">
-            <div class="row special-list">
-                <div class="col-lg-3 col-md-6 special-grid ">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/gc1.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Moong Dal 1KG</h4>
-                            <h5> ₹ 120</h5>
-                        </div>
-                    </div>
-                </div>
+            <div id="product-table" class="row special-list" style="margin-bottom: 20px;">
+
+                <script>
+                    var list = firebase.database().ref('Products/cerealsapulses/');
+                    list.on("value", function(pros) {
+
+                        if (pros.exists()) {
+                            var catHtml = "";
+
+                            pros.forEach(function(cat) {
+
+
+                                catHtml += "<div class='col-lg-3 col-md-6 special-grid'> <div class = 'products-single fix' > <div class = 'box-img-hover' > <div class = 'type-lb' > <p class = 'new' > New </p> </div >"
+                                catHtml += "<img src='"
+                                catHtml += cat.val().productImage;
+                                catHtml += "' class='img-fluid' style='width:225px;height:225px'></img>"
+                                catHtml += "<div class='mask-icon'> <a style = 'width:100%' class = 'cart' href = 'https://wa.me/message/PUJA2JPSE2DLP1' > Order Now </a> </div></div> <div class ='why-text'>"
+                                catHtml += "<h4>"
+                                catHtml += cat.val().productName;
+                                catHtml += " ";
+                                catHtml += cat.val().productQuantity;
+                                catHtml += cat.val().productUnit;
+                                catHtml += "</h4>"
+                                catHtml += "<h5> ₹ "
+                                catHtml += cat.val().productPrice;
+                                catHtml += "</h5>"
+                                catHtml += "</div>"
+                                catHtml += "</div>"
+                                catHtml += "</div>"
+                            })
+                            $("#product-table").html(catHtml);
+
+                        }
+
+                    })
+                </script>
+
 
                 <div class="col-lg-3 col-md-6 special-grid ">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
-                                <p class="new">New</p>
+                                <p class="sale">Sale</p>
                             </div>
-                            <img src="images/gc2.jpg" class="img-fluid" alt="Image">
+                            <img src="images/vc1.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Arhar Daal 1KG</h4>
-                            <h5> ₹ 90</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid ">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/gc3.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Chana Daal 1KG</h4>
-                            <h5> ₹ 75</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/gc4.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Udadd Daal 1KG</h4>
-                            <h5> ₹ 140</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 special-grid ">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/gc5.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Masood Daal</h4>
-                            <h5> ₹ 80</h5>
+                            <h4>Potato 1KG</h4>
+                            <h5> ₹ 30</h5>
                         </div>
                     </div>
                 </div>
@@ -397,54 +369,20 @@
                             <div class="type-lb">
                                 <p class="new">New</p>
                             </div>
-                            <img src="images/gc6.jpg" class="img-fluid" alt="Image">
+                            <img src="images/vc2.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Maharaja Rice 1KG</h4>
-                            <h5> ₹ 45</h5>
+                            <h4>Pahadi Potato 1KG</h4>
+                            <h5> ₹ 35</h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 special-grid ">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/gc7.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Basmati Rice 1KG</h4>
-                            <h5> ₹ 100</h5>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/gc8.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
 
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Poha 1KG</h4>
-                            <h5> ₹ 45</h5>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -605,6 +543,8 @@
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
+
+
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -618,8 +558,8 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/baguetteBox.min.js"></script>
     <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+
 </body>
 
 </html>

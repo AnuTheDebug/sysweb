@@ -10,7 +10,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+
 
 
 var messagesRef = firebase.database().ref('contactformmessages');
@@ -28,6 +28,7 @@ $('#contactForm').submit(function(e) {
     });
 
     $('.success-message').show();
+    window.alert("Thank You! Our Team will get in touch with you shortly.");
 
     $('#contactForm')[0].reset();
 });
@@ -45,6 +46,7 @@ $('#partnerForm').submit(function(e) {
     });
 
     $('.success-message').show();
+    window.alert("Thank You! Our Team will get in touch with you shortly.");
 
     $('#partnerForm')[0].reset();
 });
