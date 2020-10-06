@@ -27,6 +27,13 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
+
+    <script src="js/app.js"></script>
+
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -209,6 +216,29 @@
                                                 </ul>
                                             </div>
                                         </div>
+
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Food & Breakfast</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li>
+                                                        <a href="fast.html">Fast Food</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="break.html">Breakfast</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="lunch.html">Lunch Special</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="dinner.html">Dinner Special</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+
                                         <!-- end col- -->
                                     </div>
                                     <!-- end row -->
@@ -298,158 +328,74 @@
     </div>
     <!-- End All Title Box -->
 
-
     <div class="products-box">
         <div class="container">
-            <div class="row special-list">
-                <div class="col-lg-3 col-md-6 special-grid ">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="images/pro1.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Coca Cola 2L</h4>
-                            <h5> ₹ 90</h5>
-                        </div>
-                    </div>
-                </div>
+            <div id="product-table" class="row special-list" style="margin-bottom: 20px;">
 
-                <div class="col-lg-3 col-md-6 special-grid ">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/bc2.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Thums Up 2L Pack</h4>
-                            <h5> ₹ 90</h5>
-                        </div>
-                    </div>
-                </div>
+                <script>
+                    var list = firebase.database().ref('Products/colddrinks/');
+                    list.on("value", function(pros) {
 
-                <div class="col-lg-3 col-md-6 special-grid ">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/bc3.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Mountain Dew 2L Party Pack</h4>
-                            <h5> ₹ 90</h5>
-                        </div>
-                    </div>
-                </div>
+                        if (pros.exists()) {
+                            var catHtml = "";
+                            var count = 0;
+                            var left = 0;
+                            var top = 0;
+                            var height = 1;
 
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/bc4.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
 
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lemon Limca 2L Pack</h4>
-                            <h5> ₹ 90</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 special-grid ">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/bc5.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Fruity 2L Pack</h4>
-                            <h5> ₹ 100</h5>
-                        </div>
-                    </div>
-                </div>
+                            pros.forEach(function(cat) {
 
-                <div class="col-lg-3 col-md-6 special-grid ">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/bc6.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Sprite 2L Pack</h4>
-                            <h5> ₹ 90</h5>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-3 col-md-6 special-grid ">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/bc7.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Sprite 1.25L Pack</h4>
-                            <h5> ₹ 65</h5>
-                        </div>
-                    </div>
-                </div>
+                                if (count == 4) {
+                                    count = 0;
+                                    left = 0;
+                                    top += 350;
+                                }
 
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/bc8.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
+                                height++;
 
-                                <a style="width:100%" class="cart" href="https://wa.me/message/PUJA2JPSE2DLP1">Order Now</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Sprite 600ML Pack </h4>
-                            <h5> ₹ 35</h5>
-                        </div>
-                    </div>
-                </div>
+                                catHtml += "<div class='col-lg-3 col-md-6 special-grid' style='position:absolute;left:" + left + "px;top:" + top + "px'> <div class = 'products-single fix' > <div class = 'box-img-hover' > <div class = 'type-lb' > <p class = 'new' > New </p> </div>"
+                                catHtml += "<img src='"
+                                catHtml += cat.val().productImage;
+                                catHtml += "' class='img-fluid' style='width:225px;height:225px'></img>"
+                                catHtml += "<div class='mask-icon'> <a style = 'width:100%' class = 'cart' href = 'https://wa.me/message/PUJA2JPSE2DLP1' > Order Now </a> </div></div> <div class ='why-text'>"
+                                catHtml += "<h4>"
+                                catHtml += cat.val().productName;
+                                catHtml += " ";
+                                catHtml += cat.val().productQuantity;
+                                catHtml += cat.val().productUnit;
+                                catHtml += "</h4>"
+                                catHtml += "<h5> ₹ "
+                                catHtml += cat.val().productPrice;
+                                catHtml += "</h5>"
+                                catHtml += "</div>"
+                                catHtml += "</div>"
+                                catHtml += "</div>"
+
+                                left += 285;
+                                count += 1;
+                            })
+                            $("#product-table").html(catHtml);
+                            $("#product-table").height(height * 85);
+
+
+
+                        }
+
+                    })
+                </script>
+
+
+
+
+
+
             </div>
         </div>
     </div>
-    <!-- Start Instagram Feed  -->
+
+    <!-- Start Instagram Feed -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
@@ -619,7 +565,6 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/baguetteBox.min.js"></script>
     <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
 </body>
 

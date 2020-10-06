@@ -27,13 +27,14 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+
+
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
 
     <script src="js/app.js"></script>
-
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -215,6 +216,7 @@
                                                 </ul>
                                             </div>
                                         </div>
+                                        <!-- end col- -->
                                         <div class="col-menu col-md-3">
                                             <h6 class="title">Food & Breakfast</h6>
                                             <div class="content">
@@ -234,11 +236,6 @@
                                                 </ul>
                                             </div>
                                         </div>
-
-
-
-
-                                        <!-- end col- -->
                                     </div>
                                     <!-- end row -->
                                 </li>
@@ -316,10 +313,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2> Dairy </h2>
+                    <h2> Food & Breakfast</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Product</a></li>
-                        <li class="breadcrumb-item active">Ghee & Curd</li>
+                        <li class="breadcrumb-item active">Lunch Special</li>
                     </ul>
                 </div>
             </div>
@@ -327,13 +324,12 @@
     </div>
     <!-- End All Title Box -->
 
-
     <div class="products-box">
         <div class="container">
             <div id="product-table" class="row special-list" style="margin-bottom: 20px;">
 
                 <script>
-                    var list = firebase.database().ref('Products/gheeacurd/');
+                    var list = firebase.database().ref('Products/lunchspecial/');
                     list.on("value", function(pros) {
 
                         if (pros.exists()) {
@@ -371,14 +367,11 @@
                                 catHtml += "</div>"
                                 catHtml += "</div>"
                                 catHtml += "</div>"
-
                                 left += 285;
                                 count += 1;
                             })
                             $("#product-table").html(catHtml);
                             $("#product-table").height(height * 85);
-
-
 
                         }
 
@@ -549,6 +542,8 @@
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
+
+
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -563,6 +558,7 @@
     <script src="js/baguetteBox.min.js"></script>
     <script src="js/form-validator.min.js"></script>
     <script src="js/custom.js"></script>
+
 </body>
 
 </html>
