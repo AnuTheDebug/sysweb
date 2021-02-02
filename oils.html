@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Shri Yamuna Store</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
+
+    <script src="js/app.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Start Main Top -->
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="text-slid-box">
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                                <li>
+                                    <i class="fab fa-opencart"></i> Get exciting discounts and benefits.
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> No minimum limits to place your order.
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Delivery at your doorstep.
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Cash On Delivery facility available.
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Free delivery above order of 500 INR.
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Fastest delivery within 30 minutes of order confirmation.
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Order now to get 10% discount. Use Code ORDER10.
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Minimum delivery charges.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="custom-select-box">
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+            <option>₹ INR</option>
+        </select>
+                    </div>
+                    <div class="right-phone-box">
+                        <p>Call US :- <a href="#"> +91 70882 10053</a></p>
+                    </div>
+                    <div class="our-link">
+                        <ul>
+                            <li style="color: aliceblue;">Welcome Guest!</li>
+                            <li><a href="location.html">Our location</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Top -->
+
+    <!-- Start Main Top -->
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="dropdown megamenu-fw">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
+                            <ul class="dropdown-menu megamenu-content" role="menu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Dairy</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li>
+                                                        <a href="milk.html">Milk</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="butt.html">Butter & Paneer</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="ghee.html">Ghee & Curd</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="ermi.html">Butter Milk</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- end col-3 -->
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Beverages</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="juice.html">Juice</a></li>
+                                                    <li><a href="cold.html">Cold Drinks</a></li>
+                                                    <li>
+                                                        <a href="energy.html">Energy Drinks</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="special.html">Special Drinks</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- end col-3 -->
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Vegetables & Fruits</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li><a href="season.html">Season Fruits</a></li>
+                                                    <li><a href="leafy.html">Leafy Green Vegetables</a></li>
+                                                    <li>
+                                                        <a href="cruci.html">Cruciferous, Marrow & Root</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="raw.html">Raw Vegetables</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Grocery</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li>
+                                                        <a href="cere.html">Cereals & Pulses</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="kitchen.html">Kitchen Special</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="oils.html">Oils & Condiments</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="frozen.html">Frozen Food & Other</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- end col-3 -->
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Beauty & Skin Care</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li>
+                                                        <a href="baby.html">Baby</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="fema.html">Female</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="male.html">Male</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="spec.html">Special Products</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- end col- -->
+                                        <div class="col-menu col-md-3">
+                                            <h6 class="title">Food & Breakfast</h6>
+                                            <div class="content">
+                                                <ul class="menu-col">
+                                                    <li>
+                                                        <a href="fast.html">Fast Food</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="break.html">Breakfast</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="lunch.html">Lunch Special</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="dinner.html">Dinner Special</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <!-- end row -->
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Shop & Enjoy</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="bestdeals.html">Best Deals</a>
+                                </li>
+                                <li>
+                                    <a href="catalog.html">Catalog</a>
+                                </li>
+                                <li>
+                                    <a href="partner.html">Become a partner</a>
+                                </li>
+                                <li>
+                                    <a href="delivery.html">Return  &amp; Refund Policy </a>
+                                </li>
+                                <li><a href="shop-detail.html">Vendor Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <!-- End Atribute Navigation -->
+            </div>
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+
+    </nav>
+    <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2> Grocery</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Product</a></li>
+                        <li class="breadcrumb-item active">Oils & Condiments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+    <div class="products-box">
+        <div class="container">
+            <div id="product-table" class="row special-list" style="margin-bottom: 20px;">
+
+                <script>
+                    var list = firebase.database().ref('Products/oilsacondiments/');
+                    list.on("value", function(pros) {
+
+                        if (pros.exists()) {
+                            var catHtml = "";
+                            var count = 0;
+                            var left = 0;
+                            var top = 0;
+                            var height = 1;
+
+                            pros.forEach(function(cat) {
+
+
+                                if (count == 4) {
+                                    count = 0;
+                                    left = 0;
+                                    top += 350;
+                                }
+
+                                height++;
+
+                                catHtml += "<div class='col-lg-3 col-md-6 special-grid' style='position:absolute;left:" + left + "px;top:" + top + "px'> <div class = 'products-single fix' > <div class = 'box-img-hover' > <div class = 'type-lb' > <p class = 'new' > New </p> </div>"
+                                catHtml += "<img src='"
+                                catHtml += cat.val().productImage;
+                                catHtml += "' class='img-fluid' style='width:225px;height:225px'></img>"
+                                catHtml += "<div class='mask-icon'> <a style = 'width:100%' class = 'cart' href = 'https://wa.me/message/PUJA2JPSE2DLP1' > Order Now </a> </div></div> <div class ='why-text'>"
+                                catHtml += "<h4>"
+                                catHtml += cat.val().productName;
+                                catHtml += " ";
+                                catHtml += cat.val().productQuantity;
+                                catHtml += cat.val().productUnit;
+                                catHtml += "</h4>"
+                                catHtml += "<h5> ₹ "
+                                catHtml += cat.val().productPrice;
+                                catHtml += "</h5>"
+                                catHtml += "</div>"
+                                catHtml += "</div>"
+                                catHtml += "</div>"
+                                left += 285;
+                                count += 1;
+                            })
+                            $("#product-table").html(catHtml);
+                            $("#product-table").height(height * 85);
+
+                        }
+
+                    })
+                </script>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Start Instagram Feed  -->
+    <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ig-1.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ig-2.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ig-3.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ig-4.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ig-5.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ig-6.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ig-7.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ig-8.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ig-9.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/ig-10.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Instagram Feed  -->
+
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>About Shri Yamuna Store</h4>
+                            <p>Shri Yamuna Store is a way of lifestyle which must be used by every person in this modernizing world.Most of us did not have time and want to make our grocery,dairy,skin care,vegetables,fruits,etc shopping easy and time efficient.
+                                SYS completes all your need by providing it's services at low cost. We are dedicated towards a better and modern lifestyle of people and providing them our services at low price as much as possible. Discover about us more
+                                by visiting our social media platforms.
+                            </p>
+                            <ul>
+                                <li><a href="https://www.facebook.com/Shri-Yamuna-Store-104427301356871"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://twitter.com/YamunaStore"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/shri-yamuna-store/?viewAsMember=true"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com/shriyamunastore/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="https://wa.me/message/PUJA2JPSE2DLP1"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Know More</h4>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="service.html">Our Service</a></li>
+                                <li><a href="location.html">Our Location</a></li>
+                                <li><a href="tnc.html">Terms &amp; Conditions</a></li>
+                                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                                <li><a href="delivery.html">Return  &amp; Refund Policy </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Karoli Kunj Gali<br> Madanmohan Ghera,Kalidah<br> Vrindavan, Mathura
+                                        <br>Uttar Pradesh-281121
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+91 70882 10053">+91 70882 10053</a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:shriyamunastore@gmail.com">shriyamunastore@gmail.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer  -->
+
+    <!-- Start copyright  -->
+    <div class="footer-copyright">
+        <p class="footer-company">All Rights Reserved. &copy; 2020 <a href="#">Shri Yamuna Store | </a> Designed & Developed By :
+            <a href="https://feelthecoder.com">Vikas Kumar</a>
+        </p>
+    </div>
+    <!-- End copyright  -->
+
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    <!-- ALL JS FILES -->
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/inewsticker.js"></script>
+    <script src="js/bootsnav.js"></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
